@@ -1,0 +1,51 @@
+/* media */
+@media screen and (max-width: 1679px) {
+    .btn2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1592px) {
+    .btn2 {
+        font-size: 75px;
+    }
+}
+
+@media screen and (max-width: 1534px) {
+    .btn2 {
+        font-size: 70px;
+    }
+}
+@media screen and (max-width: 1476px) {
+    .btn2 {
+        font-size: 65px;
+    }
+}
+@media screen and (max-width: 1414px) {
+    .btn2 {
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 1196px) {
+    .btn2 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .btn2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-height: 375px) {
+    .camera_id2 {
+        /* width: 187px; */
+        height: 375px;
+
+    }
+    .camera_id3, .camera_id1 {
+        /* width: 187px; */
+        /* height: 375px; */
+
+    }
+}
