@@ -28,7 +28,7 @@ Route::get('/maps', 'MapController@index')->name('maps');
 
 Route::get('/controller/camera_up','camera_control@up_camera');
 Route::get('/controller/tank','camera_control@tank_control');
-Route::get('/controller/update_led','camera_control@update_led');
+Route::get('/controller/update_auto','camera_control@update_auto');
 Route::get('/controller/updatetime','camera_control@updatetime');
 Route::get('/controller/updatetime_1s','camera_control@updatetime_1s');
 Route::get('/controller/updatestate','camera_control@updatestate');
