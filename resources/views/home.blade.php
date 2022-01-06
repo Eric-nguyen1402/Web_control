@@ -4,40 +4,26 @@
     <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> <!--https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js bootstrap2 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="js/canvasjs.min.js"></script>
         <title>MPF Drive</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <!-- https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css bootstrap1.css -->
-
-        <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- add thư viện cho nút nhất hoặc icon -->
-        <link rel="stylesheet" href="css/setting.css"> <!-- css cho phần hiển thị cài đặt  -->
-        <link rel="stylesheet" href="css/home/body.css"> <!-- css cơ bản cho phần giao diện trang web -->
-        <link rel="stylesheet" href="css/home/camera.css"> <!-- phần css cho phần camera chủ yếu là backgroud -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/setting.css"> 
+        <link rel="stylesheet" href="css/home/body.css">
+        <link rel="stylesheet" href="css/home/camera.css">
         <link rel="stylesheet" href="css/home/range.css">
         <link rel="stylesheet" href="css/home/slider.css">
-        <!-- <link rel="stylesheet" href="css/home/media.css"> -->
     </head>
-   
     <style>
-
-/* phóng to phóng nhỏ */
         .zoom{ 
-            /* background-color: #DDD;  */
-            /* height: 100px;  */
             margin: auto; 
             overflow: hidden; 
             width: calc(60%); 
-            /*width: px;*/
         }
- 
         .erro-battery{
-            /* display: none; */
             -webkit-animation: NAME-YOUR-ANIMATION 1s infinite; /* Safari 4+ */
             -moz-animation:    NAME-YOUR-ANIMATION 1s infinite; /* Fx 5+ */
             -o-animation:      NAME-YOUR-ANIMATION 1s infinite; /* Opera 12+ */
@@ -51,16 +37,13 @@
                 border: 3px solid #337ab7;
             }
         }
-
-/* nút nhấn điều khiển */
         .btn2 {
             background-color: #ffffff00;
             border: none;
             font-family: inherit;
             font-size: inherit;
             line-height: inherit;
-            color: #b7337a;  /*337ab780*/
-            /* padding: 1px 6px; */
+            color: #b7337a;
             cursor: pointer;
             font-size: 60px;
         }
@@ -68,15 +51,13 @@
             color: #23527c;
             text-decoration: underline;
         }
-
         .btn_updown {
             background-color: #ffffff00;
             border: none;
             font-family: inherit;
             font-size: inherit;
             line-height: inherit;
-            color: #b7337a;  /*337ab780*/
-            /* padding: 1px 6px; */
+            color: #b7337a;
             cursor: pointer;
             font-size: 60px;
         }
@@ -84,15 +65,13 @@
             color: #23527c;
             text-decoration: underline;
         }
-
         .btn3 {
             background-color: #ffffff00;
             border: none;
             font-family: inherit;
             font-size: inherit;
             line-height: inherit;
-            color: #b7337a;  /*337ab780*/
-            /* padding: 1px 6px; */
+            color: #b7337a;
             cursor: pointer;
             font-size: 60px;
             transform: rotate(45deg);
@@ -101,15 +80,13 @@
             color: #23527c;
             text-decoration: underline;
         }
-
         .btn4 {
             background-color: #ffffff00;
             border: none;
             font-family: inherit;
             font-size: inherit;
             line-height: inherit;
-            color: #b7337a;  /*337ab780*/
-            /* padding: 1px 6px; */
+            color: #b7337a;
             cursor: pointer;
             font-size: 60px;
             transform: rotate(-45deg);
@@ -118,20 +95,16 @@
             color: #23527c;
             text-decoration: underline;
         }
-
         .btn5 {
             background-color: Transparent;
             border: none;
             font-family: inherit;
             font-size: inherit;
             line-height: inherit;
-            color: Transparent;  /*337ab780*/
+            color: Transparent;
             cursor: pointer;
             font-size: 60px;
         }
-
-
-/* nút nhấn phần cài đặt */
         .btn-setting {
             background-color: #ffffff00;
             border: none;
@@ -139,7 +112,6 @@
             font-size: inherit;
             line-height: inherit;
             color: #005df3b3;
-            /* padding: 1px 6px; */
             cursor: pointer;
             font-size: 25px;
             flex: 0 0 calc(80% - 60px);
@@ -148,8 +120,6 @@
             color: #004aff;
             text-decoration: underline;
         }
-        
-        
         .grid-control-center {
             display: flex;
             flex-wrap: wrap;
@@ -160,7 +130,6 @@
             flex-wrap: wrap;
             justify-content: right;
         }
-
         .btn-Loop {
             background-color: #ffffff00;
             border: none;
@@ -179,12 +148,9 @@
             color: #23527c;
             text-decoration: underline;
         }
-/* chia grid phần điều khiển */
         .grid-control-up {
             text-align: center;
             display: grid;
-            /* grid-template-columns: 30px 30px 30px;
-            grid-template-rows: 30px 30px 30px; */
             gap: 0px 0px;
             grid-template-areas:
                 ". Up ."
@@ -192,51 +158,25 @@
                 ". Down .";
         }
         .grid-control-up1 {
-            /* text-align: center; */
             display: grid;
             grid-template-columns: auto auto auto;
-            /* grid-template-columns: 30px 30px 30px;
-            grid-template-rows: 30px 30px 30px; */
             padding: 10px;
             gap: 10px;
         }
-
         .CCW { grid-area: CCW; }
         .Up { grid-area: Up; }
         .CW { grid-area: CW; }
         .Up-Left { grid-area: Up-Left;}
         .Stop { 
             grid-column-start: 2;
-            /* grid-column-end: 4; */
-            
         }
         .Up-Right { grid-area: Up-Right; }
         .Down { grid-area: Down; }
         .Down-Left { grid-area: Down-Left; }
         .Down-Right { grid-area: Down-Right; }
-
-        /* .CCW { grid-area: CCW; }
-        .Up { grid-area: Up; }
-        .CW { grid-area: CW; }
-        .Up-Left { grid-area: Up-Left;}
-        .Stop { grid-area: Stop; }
-        .Up-Right { grid-area: Up-Right; }
-        .Down { grid-area: Down; }
-        .Down-Left { grid-area: Down-Left; }
-        .Down-Right { grid-area: Down-Right; } */
-
-/* chia web làm 3 phần */
-        .height-col-top{
-            height: calc(100%/4)
-        }
-        .height-col-mid{
-            height: calc(75%/2)
-        }
-        .height-col-bot{
-            height: calc(75%/2)
-        }
-
-/* css phần đầu(header) */
+        .height-col-top{height: calc(100%/4)}
+        .height-col-mid{height: calc(75%/2)}
+        .height-col-bot{height: calc(75%/2)}
         .batteryContainer {
             padding-top: 5px;
             display: -webkit-box;
@@ -247,7 +187,6 @@
             flex-direction: row;
             align-items: center;
         }
-
         .batteryOuter {
             border-radius: 3px;
             border: 2px solid black;
@@ -255,7 +194,6 @@
             width: 45px;
             height: 18px;
         }
-
         .batteryBump {
             border-radius: 2px;
             border: 1px solid black;
@@ -263,15 +201,11 @@
             width: 2px;
             height: 7px;
         }
-
         #batteryLevel {
             border-radius: 1px;
             background-color: #73AD21;
-            /* width: 41px; */
-            /* height: 14px; */
             text-align: center;
         }
-
         .error-notification{
             height: 25px; 
             display: none;
@@ -292,7 +226,6 @@
             font-size: 25px;
             flex: 0 0 calc(50% - 40px);
         }
-
         .level-notification{
             height: 25px; 
             display: none;
@@ -306,8 +239,6 @@
         #control-left, #control-right, #control-bot-left{
             visibility: hidden;
         }
-        
-/* phần dropdown bên trong phần cài đặt */
         .icon{
             height: 14px;
             width: 14px;
@@ -316,64 +247,33 @@
             height: 16px;
             width: 16px;
         }
-
-/* bot one by one */
-        #bot-1-by-1{
-            display: none;
-        }
-    
-/* media */
+        #bot-1-by-1{display: none;}
+        /* media */
         @media screen and (max-width: 1679px) {
-            .btn2 {
-                font-size: 30px;
-            }
+            .btn2 {font-size: 30px;}
         }
-
         @media screen and (max-width: 1592px) {
-            .btn2 {
-                font-size: 75px;
-            }
+            .btn2 {font-size: 75px;}
         }
-
         @media screen and (max-width: 1534px) {
-            .btn2 {
-                font-size: 70px;
-            }
+            .btn2 {font-size: 70px;}
         }
         @media screen and (max-width: 1476px) {
-            .btn2 {
-                font-size: 65px;
-            }
+            .btn2 {font-size: 65px;}
         }
         @media screen and (max-width: 1414px) {
-            .btn2 {
-                font-size: 60px;
-            }
+            .btn2 {font-size: 60px;}
         }
         @media screen and (max-width: 1196px) {
-            .btn2 {
-                font-size: 50px;
-            }
+            .btn2 {font-size: 50px;}
         }
         @media screen and (max-width: 414px) {
-            .btn2 {
-                font-size: 40px;
-            }
+            .btn2 {font-size: 40px;}
         }
-
         @media screen and (max-height: 375px) {
-            .camera_id2 {
-                /* width: 187px; */
-                height: 375px;
-
-            }
-            .camera_id3, .camera_id1 {
-                /* width: 187px; */
-                /* height: 375px; */
-
-            }
+            .camera_id2 {height: 375px;}
+            .camera_id3, .camera_id1 {}
         }
-
     </style>
     <body> 
         <div class="container">
@@ -386,26 +286,20 @@
                             <div class="batteryBump"></div>
                             <a href="#" style = "padding: 0 0 0 5px; font-size: 18px; color: red;"><span id = "span" class="fa fa-bullseye"></span></a>
                         </div>
-                    </div> <!-- div pin -->
+                    </div>
                     <div class = "col-xs-8 grid-control-center ">
                         <div class = "error-notification text-center" id = "error-notification" ></div>
                         <div class = "degree-notification text-center" id = "degree-notification" > </div>
                         <div class = "level-notification text-center" id = "level-notification" > </div>
-                        <!-- Rounded switch -->
-                        <!-- <button class = "btn-Loop text-left" id = "btn-Loop"><i class="fa fa-play-circle-o" aria-hidden="true" onclick='selection()'></i></button> -->
                     </div>
-                    
-                    <!-- <div class = "col-xs-offset-10 text-right" style = "margin-right: 20px"> -->
                     <div class = "col-xs-offset-10 grid-control-right" style = "margin-right: 20px">
                         <button class="btn-setting" name = "setting" style ="text-align: right"><i class="fa fa-map" aria-hidden="true" onclick="location.href='{{ url('/maps') }}'"></i></button>
                         <button class="btn-setting" name = "setting" ><i class="fa fa-cogs" aria-hidden="true" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"></i></button>
                         <label style = "margin-top: 15px; font-size: 40px; color: blue;"><i class="fa fa-sun-o" aria-hidden="true" ></i></label>
                         <label class="switch" style = "margin-top: 20px; margin-left: 10px;">
-                            <input type="checkbox" onchange="get_led_level()">
+                            <input type="checkbox" onchange="run_auto()">
                             <span class="slider-switch round" ></span>
                         </label>
-                    
-                        <!-- modal 1 phần cài đặt -->
                         <div id="id01" class="modal">
                             <div class="modal-content animate">
                                 <div class = "row text-left" id = "permissions" style = "padding-top:10px !important;">
@@ -426,8 +320,7 @@
                                             User
                                         </a>
                                     </div>
-                                </div> <!-- bot view camera -->
-                             <!-- Bot interface -->
+                                </div>
                                 <div class = "row" id = "bot-view-camera" style = "padding-top:10px !important;">
                                     <div class = "col-xs-5" style = "margin-left: 10px !important;">
                                         <img id = "video-icon" class="icon" src = "/public/images/video-camera.png">&nbsp;Bottom Interface: &nbsp;&nbsp;</img>
@@ -446,8 +339,7 @@
                                             2 Line
                                         </a>
                                     </div>
-                                </div> <!-- bot view camera -->
-                             <!-- Front Camera -->
+                                </div>
                                 <div class = "row" id = "front-view-camera" style = "padding-top:10px !important;">
                                     <div class = col-xs-1></div>
                                     <div class = "col-xs-4" style = "margin-left: 10px !important;">
@@ -467,8 +359,7 @@
                                             Hide  &nbsp;
                                         </a>
                                     </div>
-                                </div> <!-- Front view camera -->
-                             <!-- Rear Camera -->
+                                </div>
                                 <div class = "row" id = "rear-view" style = "margin: 10px 0 10px 0 !important;">
                                     <div class = col-xs-1></div>
                                     <div class = "col-xs-4" style = "margin-left: 10px !important;">
@@ -488,10 +379,9 @@
                                             Hide  &nbsp;
                                         </a>
                                     </div>
-                                </div> <!-- Rear view camera -->
+                                </div>
                             </div>
-                        </div> <!-- modal div setting -->
-                        <!-- modal 2 phần thông báo xin quyền admin -->
+                        </div>
                         <div class = "modal text-center" id = "modal_id02">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -504,38 +394,33 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> <!-- kết thúc modal 2 -->
-                    </div> <!-- div pin -->
-                </div> <!-- div top -->
+                        </div>
+                    </div>
+                </div>
              <!-------------------------------------------------------MID--------------------------------------------------------------->
                 <div class = "col-xs-12 height-col-mid" style = "padding-top: -20px">
                     <input id="slider" type="range" min="0" max="10" value="0" />
                     <div class = "col-xs-1">
                     </div>
                     <div class = "col-xs-3 grid-control-up1" id = "control-left" style = "margin-left: 10px">
-
                         <button class="btn3" name = "turn_left" ><i class="fa fa-arrow-left" aria-hidden="true" onclick='tank_control(3)'></i></button>
-                        <button class="btn_updown" name = "go_up" style="font-size: 65px" ><i class="fa fa-arrow-up" aria-hidden="true" onclick='button_up_left()'></i></button>
+                        <button class="btn_updown" id = "button_up_left" name = "go_up" style="font-size: 65px" ><i class="fa fa-arrow-up" aria-hidden="true" onclick='button_up_left()'></i></button>
                         <button class="btn4" name = "turn_right" ><i class="fa fa-arrow-right" aria-hidden="true" onclick='tank_control(2)'></i></button>
                         <button class="btn2" name = "around_left" style="font-size: 65px"><i class="fa fa-undo" aria-hidden="true" onclick='tank_control(8)'></i></button>
                         <button class="btn2" name = "stop" ><i class="fa fa-bullseye" aria-hidden="true" onclick='tank_control(0)'></i></button>
                         <button class="btn2" name = "around_right" style="font-size: 65px"><i class="fa fa-repeat" aria-hidden="true" onclick='tank_control(7)'></i></button>
                         <button class="btn3" name = "crew-down" ><i class="fa fa-arrow-down" aria-hidden="true" onclick='tank_control(6)'></i></button>
-                        <button class="btn_updown" name = "go_down" style="font-size: 65px"><i class="fa fa-arrow-down" aria-hidden="true" onclick='button_down_left()'></i></button>
+                        <button class="btn_updown" id = "button_down_left" name = "go_down" style="font-size: 65px"><i class="fa fa-arrow-down" aria-hidden="true" onclick='button_down_left()'></i></button>
                         <button class="btn4" name = "crew-down" ><i class="fa fa-arrow-down" aria-hidden="true" onclick='tank_control(5)'></i></button>
-
-                    </div> <!-- div control left side -->
-                     
+                    </div> 
                     <div class = "col-xs-4">
                         <div class = "line center-block" style = "width: 300.5px; height: 150px">
                             <div class = "y-axis">
                                 <div id = "circle-center" class = "center-block"></div>
                                 <div id = "line-center" class = "center-block" style = "margin-left:130px"></div>
                                 <div id = "line-center" class = "center-block" style = "margin-left:-136px"></div>
-                                <!-- <div class="line_0" id = "line_0"></div> -->
                             </div>
                             <div class = "x-axis" id = "x-axis" style = "transform: rotate(0deg);">
-                            <!-- nửa đường tròn -->
                                 <div id="half-circle" class = "center-block">
                                     <div class="line-75-left" id ="line-75-left">
                                         <p class = "no-75-left">
@@ -593,7 +478,6 @@
                                         </p>
                                     </div>
                                 </div>	
-                                <!-- các đường thằng ngang -->
                                 <div class = "x-axis-line" id = "x-axis-line">
                                     <div class="line_05" id = "line_65_top" style = "margin-top: -130px !important; visibility: hidden"></div>
                                     <div class="line_01" id = "line_60_top" style = "margin-top: -120px !important; visibility: hidden">
@@ -602,94 +486,78 @@
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_55_top" style = "margin-top: -110px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_50_top" style = "margin-top: -100px !important; visibility: hidden">
                                         <p>
                                             <strong>50</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_45_top" style = "margin-top: -90px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_40_top" style = "margin-top: -80px !important; visibility: hidden">
                                         <p>
                                             <strong>40</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_35_top" style = "margin-top: -70px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_30_top" style = "margin-top: -60px !important; visibility: hidden">
                                         <p>
                                             <strong>30</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_25_top" style = "margin-top: -50px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_20_top" style = "margin-top: -40px !important; visibility: hidden">
                                         <p>
                                             <strong>20</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_15_top" style = "margin-top: -30px !important"></div>
-
                                     <div class="line_01" id = "line_10_top" style = "margin-top: -20px !important">
                                         <p>
                                             <strong>10</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_5_top" style = "margin-top: -10px !important"></div>
-
-                                    <!-- <div class="line_x" id = "line_x"></div> -->
                                     <div class="line_01" id = "line_01" style = "margin-top: 0px !important">
                                         <p style = "margin-left: -4px;">
                                             <strong>0</strong>
                                         </p>
                                     </div>
-                                    
                                     <div class="line_05" id = "line_5_bot" style = "margin-top: 10px !important"></div>
-
                                     <div class="line_01" id = "line_10_bot" style = "margin-top: 20px !important">
                                         <p style = "margin-left: -10px;">
                                             <strong>-10</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_15_bot" style = "margin-top: 30px !important"></div>
-
                                     <div class="line_01" id = "line_20_bot" style = "margin-top: 40px !important; visibility: hidden">
                                         <p style = "margin-left: -10px;">
                                             <strong>-20</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_25_bot" style = "margin-top: 50px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_30_bot" style = "margin-top: 60px !important; visibility: hidden">
                                         <p style = "margin-left: -10px;">
                                             <strong>-30</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_35_bot" style = "margin-top: 70px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_40_bot" style = "margin-top: 80px !important; visibility: hidden">
                                         <p style = "margin-left: -10px;">
                                             <strong>-40</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_45_bot" style = "margin-top: 90px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_50_bot" style = "margin-top: 100px !important; visibility: hidden">
                                         <p style = "margin-left: -10px;">
                                             <strong>-50</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_55_bot" style = "margin-top: 110px !important; visibility: hidden"></div>
-
                                     <div class="line_01" id = "line_60_bot" style = "margin-top: 120px !important; visibility: hidden">
                                         <p style = "margin-left: -10px;">
                                             <strong>-60</strong>
                                         </p>
                                     </div>
                                     <div class="line_05" id = "line_65_bot" style = "margin-top: 130px !important; visibility: hidden"></div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -713,7 +581,6 @@
                             <div class = "line_axis_z_180_left">
                                 <div class = "no_z_0" id = "z_180" style = "margin-left: -18px">180</div>
                             </div>
-
                             <div class = "line_axis_z_45_right">
                                 <div class = "no_z_0" id = "z_45" style = "margin-left: -15px">45</div>
                             </div>
@@ -728,30 +595,29 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="col-xs-3 grid-control-up1 text-right" id = "control-right" style = "margin-right: 10px"> -->
                     <div class="col-xs-3 grid-control-up1 " id = "control-right" style = "margin-right: 10px">
                         <button class="btn3" name = "turn_left" ><i class="fa fa-arrow-left" aria-hidden="true" onclick='tank_control(3)'></i></button>
-                        <button class="btn_updown" id = "button_up" name = "go_up" style="font-size: 65px" ><i class="fa fa-arrow-up" aria-hidden="true" onclick='button_up_right()'></i></button>
+                        <button class="btn_updown" id = "button_up_right" name = "go_up" style="font-size: 65px" ><i class="fa fa-arrow-up" aria-hidden="true" onclick='button_up_right()'></i></button>
                         <button class="btn4" name = "turn_right" ><i class="fa fa-arrow-right" aria-hidden="true" onclick='tank_control(2)'></i></button>
                         <button class="btn2" name = "around_left" style="font-size: 65px"><i class="fa fa-undo" aria-hidden="true" onclick='tank_control(8)'></i></button>
                         <button class="btn2" name = "stop" ><i class="fa fa-bullseye" aria-hidden="true" onclick='tank_control(0)'></i></button>
                         <button class="btn2" name = "around_right" style="font-size: 65px"><i class="fa fa-repeat" aria-hidden="true" onclick='tank_control(7)'></i></button>
                         <button class="btn3" name = "crew-down" ><i class="fa fa-arrow-down" aria-hidden="true" onclick='tank_control(6)'></i></button>
-                        <button class="btn_updown" name = "go_down" style="font-size: 65px"><i class="fa fa-arrow-down" aria-hidden="true" onclick='button_down_right()'></i></button>
+                        <button class="btn_updown" id = "button_down_right" name = "go_down" style="font-size: 65px"><i class="fa fa-arrow-down" aria-hidden="true" onclick='button_down_right()'></i></button>
                         <button class="btn4" name = "crew-down" ><i class="fa fa-arrow-down" aria-hidden="true" onclick='tank_control(5)'></i></button>
-                    
                     </div>
                     <div class = "col-xs-1">
                     </div> 
                     <input id="sliders" type="range" min="0" max="10" value="0" />
-                </div> <!-- div mid -->
+                </div>
              <!-------------------------------------------------------BOT--------------------------------------------------------------->
-                <div class = "col-xs-12 height-col-bot" style = "display: flex; position: relative;"> <!--height-col-bot-->
-                    <div class="col-xs-6 Chart-Container" id="chartContainer" style="height: 270px; width: 570px; margin-left: -10px;"></div>
+                <div class = "col-xs-12 height-col-bot" style = "display: flex; position: relative;">
+                    <div class="col-xs-6 Chart-Container" id="chartContainer" style="height: 260px; width: 400px; margin-left: -20px;"></div>
                         <div style="margin-top: 16px; color: dimgrey; font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: none;">
-                            <!-- <a href="https://canvasjs.com/html5-javascript-spline-chart/" target="_blank" title="JavaScript Spline Charts &amp; Graphs "></a> -->
                         </div>
+                    <div class="col-xs-3">
+                        <div class = "camera_id3" id = "1-line-camera_id3"></div>
+                    </div>
                     <div id="wrapper">
                             <svg id="meter">
                                 <circle id="outline_curves" class="circle_mask outline"  cx="50%" cy="50%">
@@ -768,34 +634,25 @@
                                 </circle>
                             </svg>
                             <img id="meter_needle" src="images/svg-meter-gauge-needle.svg" alt="">
-                            <!-- <a href="#" style = "margin-top: 10px; margin-left: 10px; font-size: 18px; color: red;"><span id = "span" class="fa fa-arrow-up"></span></a> -->
-                            <!-- <input id="slider" type="range" min="0" max="10" value="0" />  -->
                             <label id="lbl" class="speed-maker" id="value" for="" >0</label>
-                            <!-- <input id="sliders" type="range" min="0" max="10" value="0" /> -->
                     </div>
-                    
-                </div> <!-- div bot -->
+                </div>
              <!----------------------------------------------------END BOT-------------------------------------------------------------->
-
-            </div> <!-- div row camera_id2-->
-        </div> <!-- div container -->
+            </div>
+        </div>
         <script type="text/javascript" src="js/directive.js?v=1"></script>
         <script type="text/javascript" src="js/components/home/setting.js"></script>
-        <!-- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
     </body>
     <script type="text/javascript">
-        var check_admin = 0; // khai báo biến chạy 1 lần lúc mới mở web xem nó ở chế độ nào
-        var check_get_admin = 0; // biến check xem có ai xin quyền admin ko
-        var permission_value = ""; // biến cho biết tài khoản đang ở chế độ nào 
+        var check_admin = 0;
+        var check_get_admin = 0;
+        var permission_value = ""; 
         var dps = [];
         var counter = 0;
         var counter1 = 0;
         var degree = [];
         var sel = 0;
         var camera1 = "url(http://10.8.0.6:8081/) no-repeat"
-        var camera2 = "url(http://10.8.0.6:8082/) no-repeat"
-        var camera3 = "url(http://10.8.0.6:8083/) no-repeat"
-
         /* set radius for all circles */
         var r = 150;
         var circles = document.querySelectorAll('.circle_mask');
@@ -803,13 +660,11 @@
         for (var i = 0; i < total_circles; i++) {
             circles[i].setAttribute('r', r);
         }
-        
         /* Set meter's wrapper dimension */
         var meter_dimension = (r * 2) + 100;
         var wrapper = document.querySelector("#wrapper");
         wrapper.style.width = meter_dimension + "";
         wrapper.style.height = meter_dimension + "";
-
         /* Add strokes to circles  */
         var cf = 2 * Math.PI * r;
         var semi_cf = cf / 2;
@@ -827,14 +682,12 @@
             .setAttribute("stroke-dasharray", 2 + "," + (semi_cf - 2));
         document.querySelector("#mask")
             .setAttribute("stroke-dasharray", semi_cf + "," + cf);
-        
         /* Bind range slider event*/
         var slider = document.querySelector("#slider");
         var sliders = document.querySelector("#sliders");
         var lbl = document.querySelector("#lbl");
         var mask = document.querySelector("#mask");
         var meter_needle =  document.querySelector("#meter_needle");
-        
         function range_change_event_up() {
             var percent = slider.value;
             var meter_value = semi_cf - ((percent * semi_cf) / 10);
@@ -843,11 +696,9 @@
                 (270 + ((percent * 180) / 10)) + "deg)";
             lbl.textContent = percent;
             level = parseInt(slider.value) + 10;
-            //make an ajax call and get status value using the same 'id'
             $.ajax({
                 type:"get",//or POST
                 url:'{!!URL::to('controller/tank')!!}',
-                                //  (or whatever your url is)
                 data:{data:level},
                 success:function(level){
                     console.log(level);
@@ -862,11 +713,9 @@
                 (270 + ((percent * 180) / 10)) + "deg)";
             lbl.textContent = percent;
             level = parseInt(slider.value) + 30;
-            //make an ajax call and get status value using the same 'id'
             $.ajax({
-                type:"get",//or POST
+                type:"get",
                 url:'{!!URL::to('controller/tank')!!}',
-                                //  (or whatever your url is)
                 data:{data:level},
                 success:function(level){
                     console.log(level);
@@ -881,11 +730,9 @@
                 (270 + ((percents * 180) / 10)) + "deg)";
             lbl.textContent = percents;
             level = parseInt(sliders.value) + 10;
-            //make an ajax call and get status value using the same 'id'
             $.ajax({
-                type:"get",//or POST
+                type:"get",
                 url:'{!!URL::to('controller/tank')!!}',
-                                //  (or whatever your url is)
                 data:{data:level},
                 success:function(level){
                     console.log(level);
@@ -900,93 +747,73 @@
                 (270 + ((percents * 180) / 10)) + "deg)";
             lbl.textContent = percents;
             level_down = parseInt(sliders.value) + 30;
-            //make an ajax call and get status value using the same 'id'
             $.ajax({
-                type:"get",//or POST
+                type:"get",
                 url:'{!!URL::to('controller/tank')!!}',
-                                //  (or whatever your url is)
                 data:{data:level_down},
                 success:function(level_down){
                     console.log(level_down);
                     }
                 }) 
         }
-
         function button_up_left(){
-            
+            document.getElementById("button_up_left").style.color = "#00c500";
             slider.addEventListener("input", range_change_event_up);
         }
         function button_down_left(){
+            document.getElementById("button_down_left").style.color = "#00c500";
             slider.addEventListener("input", range_change_event_down);
         }
         function button_up_right(){
+            document.getElementById("button_up_right").style.color = "#00c500";
             sliders.addEventListener("input", range_change_up);
         }
         function button_down_right(){
+            document.getElementById("button_down_right").style.color = "#00c500";
             sliders.addEventListener("input", range_change_down);
         }
-        // hàm chạy mỗi 500ms
+        // run every 500ms
         var updateInterval = 500;
         setInterval(function () { updatetime() }, updateInterval); 
-        
-        //  function run chart 
         function updatetime() {
             var battery = document.getElementById("batteryLevel").innerHTML;
-            // biến time để gửi thời gian cho database phục vụ cho việc check thời gian hoạt động
             var date = Date.now();
             var date_second = parseInt(date)
             $.ajax({
-                type:"get",//or POST
+                type:"get",
                 url:'{!!URL::to('controller/updatetime')!!}',
-                                //  (or whatever your url is)
-                data:{data:date_second},
-                //can send multipledata like {data1:var1,data2:var2,data3:var3
-                //can use dataType:'text/html' or 'json' if response type expected 
-                success:function(start){ // dữ liệu trả về sau khi gửi tín hiệu tới database
+                data:{data:date_second}, 
+                success:function(start){
                     if(check_admin == 0 && start.home_user.permission_level == 1){
                         document.getElementById("control-left").style.visibility = "visible";
                         document.getElementById("control-right").style.visibility = "visible";
-                        // document.getElementById("control-bot-left").style.visibility = "visible";
-                        // document.getElementById("control-bot-left").style.visibility = "visible";
-
                         document.getElementById("private-tick-permissions").style.visibility = "visible";
                         document.getElementById("public-tick-permissions").style.visibility = "hidden";
-
                         console.log("admin");
                         permission_value = "admin";
                         check_admin = 1;
-                        
                     }
-                    // quyên user 
                     if(check_admin == 0 && start.home_user.permission_level != 1){
                         document.getElementById("control-left").style.visibility = "hidden";
                         document.getElementById("control-right").style.visibility = "hidden";
-                        // document.getElementById("control-bot-left").style.visibility = "hidden";
-
                         document.getElementById("private-tick-permissions").style.visibility = "hidden";
                         document.getElementById("public-tick-permissions").style.visibility = "visible";
-
                         console.log("users");
                         permission_value = "user";
                         check_admin = 1;
                     }
-                    // Nếu như các tài khoản đăng nhập chưa có ai có quyền admin thì trang web sẽ được reload
-                    // khi reload phần control home sẽ đảm nhận vai trò phân quyền chọn admin
                     if(start.admin == 0){
                         // location.reload();
                     }
-
                     if(start.send_user == 1){
                         if(permission_value == "admin" && check_get_admin == 0){
                             console.log("có người muốn xin admin kìa");
                             document.getElementById('modal_id02').style.display="block";
                             document.getElementById('name_user').innerHTML = start.name_user.name + " want to be an administrator. <br/> Do You want?";
                             console.log(start.name_user);
-                            // document.getElementById('modal_id02').style.width ="auto";
                             check_get_admin = 1;
                         }
                     }
-
                     if(start.user.state == 1 && start.user.state_sp == 1){
                         //  location.reload();
                         $.ajax({
@@ -994,13 +821,9 @@
                             url:'{!!URL::to('controller/updatestate')!!}',
                             data:{data:"OK"},
                             success:function(user){
-                                // console.log(user);
-                            }
-                            
+                            } 
                         })
                     }
-
-                    // nếu như admin đồng ý cho user quyền admin thì làm
                     if(start.request_permission.requests_permission == 1){
                         console.log("11");
                         $.ajax({
@@ -1013,7 +836,6 @@
                             }
                         })
                     }
-
                     if(start.updatetime.error_can != "OK"){
                         $(".error-notification").show();
                         document.getElementById("error-notification").innerHTML = String(start.updatetime.error_can);
@@ -1023,7 +845,6 @@
                         document.getElementById("error-notification").innerHTML = String(start.updatetime.current / 1000) + " A";
                         $(".degree-notification").show();
                         document.getElementById("degree-notification").innerHTML = String(start.location1.X) + " deg" ;
-                        
                         if (start.updatetime.level  > 10 && start.updatetime.level  <= 20){
                             $(".level-notification").show();
                             document.getElementById("level-notification").innerHTML = " level " + String(start.updatetime.level - 10);
@@ -1040,9 +861,7 @@
                             $(".level-notification").show();
                             document.getElementById("level-notification").innerHTML = " level " + String(start.updatetime.level);
                         }
-                        
                     }
-                    
                     if(start.updatetime.battery <= 25){
                         document.getElementById("batteryLevel").style.backgroundColor = "red";
                         $('#camera_id2').addClass('erro-battery');
@@ -1050,7 +869,6 @@
                         $('#1-line-camera_id3').addClass('erro-battery');
                         $('#2-line-camera_id1_error').addClass('erro-battery');
                         $('#2-line-camera_id3_error').addClass('erro-battery');
-                        
                     }
                     else if(start.updatetime.battery > 25 && start.updatetime.battery <= 65){
                         document.getElementById("batteryLevel").style.backgroundColor = "yellow";
@@ -1071,8 +889,6 @@
                     document.getElementById("batteryLevel").innerHTML = start.updatetime.battery + "%";
                     document.getElementById("batteryLevel").style.width = (((start.updatetime.battery)*41)/100)+ "px";
                     document.getElementById("batteryLevel").style.height = "14px";
-                    
-                    
                 },
                 error:function(){
                     // location.reload();
@@ -1080,79 +896,72 @@
             })
         };
         var chart = new CanvasJS.Chart("chartContainer", {
-                            axisX:{
-                                lineThickness: 3,
-                                lineColor: "orange",
-                                labelFontColor: "red",
-                                labelFontSize: 15,
-                                labelFontWeight: "bold"
-                            },
-                            axisY:{
-                                lineThickness: 3,
-                                lineColor: "orange",
-                                labelFontColor: "red",
-                                labelFontSize: 15,
-                                labelFontWeight: "bold",
-                                minimum:-50,
-                                maximum: 50,
-                            },
-                            animationEnabled: true,
-                            backgroundColor: "transparent",  
-                            data: [{
-                                markerType: "triangle",
-                                markerSize: 3,
-                                markerColor: "yellow",
-                                type: "spline",
-                                lineColor: "red",
-                                dataPoints: dps
-                            }]
-                        });
+            axisX:{
+                lineThickness: 3,
+                lineColor: "orange",
+                labelFontColor: "red",
+                labelFontSize: 15,
+                labelFontWeight: "bold"
+            },
+            axisY:{
+                lineThickness: 3,
+                lineColor: "orange",
+                labelFontColor: "red",
+                labelFontSize: 15,
+                labelFontWeight: "bold",
+                minimum:-50,
+                maximum: 50,
+            },
+            animationEnabled: true,
+            backgroundColor: "transparent",  
+            data: [{
+                markerType: "triangle",
+                markerSize: 3,
+                markerColor: "yellow",
+                type: "spline",
+                lineColor: "red",
+                dataPoints: dps
+            }]
+        });
         chart.render();
         function running() {
             $.ajax({
-                        type:"get",
-                        url:'{!!URL::to('controller/update_dataxyz')!!}',
-                        data:{data:"OK"},
-                        success:function(user){
-                            if(user.length > 100){
-                            //console.log(user);
-                            for (var i = 0; i < user.length; i++){
-                                if (user[i]['Level'] != 0)
-                                {
-                                    dps[i] = {
-                                        x: parseInt(user[i]['ID']),
-                                        y: parseFloat((-(user[i]['X'])))
-                                    };
-                                }
-                                
-                            }
-                            //console.log(dps);
-                            chart.render();
-                            }
-                        }         
+                type:"get",
+                url:'{!!URL::to('controller/update_dataxyz')!!}',
+                data:{data:"OK"},
+                success:function(user){
+                    if(user.length > 100){
+                    //console.log(user);
+                    for (var i = 0; i < user.length; i++){
+                        if (user[i]['Level'] != 0)
+                        {
+                            dps[i] = {
+                                x: parseInt(user[i]['ID']),
+                                y: parseFloat((-(user[i]['X'])))
+                            };
+                        }
+                    }
+                    chart.render();
+                    }
+                }         
             });  
         } 
-        
         window.onbeforeunload = function(){
             console.log('closing shared worker port...');
         };
-        
         let home = document.querySelector('.container');
-    
         home.addEventListener('click', (e) => {
             if(e.path[0].classList[0] == "fa"){
                 document.getElementById("span").className = String(e.path[0].classList);
                 if(e.path[0].classList[1] != "fa-bullseye"){
                     document.getElementById("span").style.color = "#00c500";
-                    document.getElementById("button_up").style.color = "#00c500";
                 }
                 else{
                     document.getElementById("span").style.color = "red";
                 }
             }
         });
-
-        function get_led_level(){
+        function run_auto(){
             counter = counter + 1;
             if (counter % 2 == 0){
                 led_level = 0;
@@ -1161,9 +970,8 @@
                 led_level = 1;
             }
             $.ajax({
-                type:"get",//or POST
+                type:"get",
                 url:'{!!URL::to('controller/update_led')!!}',
-                                //  (or whatever your url is)
                 data:{data:led_level},
                 success:function(led_level){
                     console.log(led_level);
@@ -1171,6 +979,10 @@
             });
         }   
         function tank_control(level){
+            document.getElementById("button_up_left").style.color = "#b7337a";
+            document.getElementById("button_down_left").style.color = "#b7337a";
+            document.getElementById("button_up_right").style.color = "#b7337a";
+            document.getElementById("button_down_right").style.color = "#b7337a";
             if (level == 0){
                 sliders.value = 0;
                 slider.value = 0;
@@ -1182,23 +994,17 @@
                 meter_needle.style.transform = "rotate(" + 270 + "deg)";
                 lbl.textContent = 0;
             }
-            //make an ajax call and get status value using the same 'id'
             $.ajax({
-
-                type:"get",//or POST
+                type:"get",
                 url:'{!!URL::to('controller/tank')!!}',
-                                //  (or whatever your url is)
                 data:{data:level},
                 success:function(level){
                     console.log(level);
                 }
             })
         }
-// show setting
-        // Get the modal
         var modal = document.getElementById('id01');
         var modal_admin = document.getElementById('modal_id02');
-
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
@@ -1208,7 +1014,6 @@
                 modal_admin.style.display = "none";
             }
         }
-
         $('#permissions a').click(function (e)
         {
             e.stopPropagation();
@@ -1231,39 +1036,31 @@
                 }
             });
         });
-        
-        function permission(duy){
+        function permission(users){
             $.ajax({
                 type: "get",
                 url: '{!!URL::to('controller/requests_permisstion')!!}',
-                data:{data:duy},
+                data:{data:users},
                 success: function (user) {
                     console.log(user);
                     if(user == "Ok"){
                         permission_value = "user";
-
                         modal_admin.style.display = "none";
-
                         document.getElementById("control-left").style.visibility = "hidden";
                         document.getElementById("control-right").style.visibility = "hidden";
-                        // document.getElementById("control-bot-left").style.visibility = "hidden";
-
                         document.getElementById("private-tick-permissions").style.visibility = "hidden";
                         document.getElementById("public-tick-permissions").style.visibility = "visible";
                     }
                     if(user == "No"){
                         permission_value = "admin";
                         check_get_admin = 0;
-
                         modal_admin.style.display = "none";
                     }
                 }
             });
         }
-
         var picker = document.getElementById('picker'), 
             circle = document.getElementById('circle-center')
-
         transform = (function(){
             var prefs = ['t', 'WebkitT', 'MozT', 'msT', 'OT'],
                 style = document.documentElement.style,
@@ -1271,22 +1068,18 @@
             for(var i = 0, len = prefs.length; i < len; i++){
                 if( (p = prefs[i] + 'ransform') in  style ) return p
             }
-            
             alert('your browser doesnt support css transforms!')
         })
-            
         rotate = function(){
             $.ajax({
                 type:"get",
                 url:'{!!URL::to('controller/update_gy25')!!}',
                 data:{data:"OK"},
                 success:function(user){
-                    //console.log(user[0]['Z']);
                     document.getElementById("circleZ").style.marginTop = ((user[0]['Z'])*(125/180) + 120) + 'px'; 
                     for (var i = 0; i < 2; i ++){
                         if( i == 0){
                             document.getElementById("x-axis-line").style.top = (user[0]['Y'])*(-2) + 'px';
-                            // âm
                             if(parseFloat(user[0]['Y']) < (-5) && parseFloat(user[0]['Y']) >= (-10)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1318,7 +1111,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-10) && parseFloat(user[0]['Y']) >= (-15)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1350,7 +1142,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-15) && parseFloat(user[0]['Y']) >= (-20)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1382,7 +1173,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-20) && parseFloat(user[0]['Y']) >= (-25)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1414,7 +1204,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-25) && parseFloat(user[0]['Y']) >= (-30)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1446,7 +1235,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-30) && parseFloat(user[0]['Y']) >= (-35)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1478,7 +1266,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-35) && parseFloat(user[0]['Y']) >= (-40)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1510,7 +1297,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) < (-40) && parseFloat(user[0]['Y']) >= (-45)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1542,8 +1328,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-                            //////////////////////////////////////////////////////////////////////////////////
-
                             else if(parseFloat(user[0]['Y']) > (5) && parseFloat(user[0]['Y']) <= (10)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1575,7 +1359,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (10) && parseFloat(user[0]['Y']) <= (15)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1607,7 +1390,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (15) && parseFloat(user[0]['Y']) <= (20)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1639,7 +1421,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (20) && parseFloat(user[0]['Y']) <= (25)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1671,7 +1452,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (25) && parseFloat(user[0]['Y']) <= (30)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1703,7 +1483,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "visible";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (30) && parseFloat(user[0]['Y']) <= (35)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1735,7 +1514,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "visible";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (35) && parseFloat(user[0]['Y']) <= (40)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1767,7 +1545,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else if(parseFloat(user[0]['Y']) > (40) && parseFloat(user[0]['Y']) <= (45)){
                                 document.getElementById("line_65_top").style.visibility = "hidden";
                                 document.getElementById("line_60_top").style.visibility = "hidden";
@@ -1799,7 +1576,6 @@
                                 document.getElementById("line_10_bot").style.visibility = "hidden";
                                 document.getElementById("line_5_bot").style.visibility = "hidden";
                             }
-
                             else{
                                 document.getElementById("line_01").style.visibility = "visible";
 
@@ -1834,7 +1610,6 @@
                                 document.getElementById("line_65_bot").style.visibility = "hidden";     
                             }
                         }
-
                         if(i == 1){
                             document.getElementById("x-axis").style.transform = 'rotate(' + (user[0]['X'])*(-1) + 'deg)';
                         }
@@ -1844,11 +1619,9 @@
                 
             })
         }
-        
-        var updateInterval1 = 200; //200
-        var updateInterval2 = 200; //200
+        var updateInterval1 = 200;
+        var updateInterval2 = 200;
         setInterval(function () { rotate() }, updateInterval1);
         setInterval(function () { running() }, updateInterval2);
-
     </script>
 </html>
