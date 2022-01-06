@@ -20,7 +20,6 @@ class CreateMoveControlTable extends Migration
             $table->string('battery');
             $table->string('error_can');
             $table->integer('status_login');
-            $table->bigInteger('led_level');
             $table->timestamps();
         });
     }
