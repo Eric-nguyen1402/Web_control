@@ -109,15 +109,15 @@ class camera_control extends Controller
         return response()->json($tank_level);
     }
 
-    public function update_led(Request $request){
-        $led_level = $request->data;
+    public function update_auto(Request $request){
+        $auto_level = $request->data;
         $level = move_control::where('id', 1)->first();
         if($level == null){
-            $led_level = 0;
-            $level = $led_level;
+            $auto_level = 0;
+            $level = $auto_level;
         }
         else{
-            $level -> led_level = $led_level;
+            $level -> auto_level = $auto_level;
         }
         $level->save();
         return response()->json($level);
